@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Крестики-Нолики</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="tic_tac_toe">
+    <div>
+        <input v-model="nameField1" placeholder="Имя игрока 1">
+        <button @click="inputName1">Ввести имя</button>
+        <br><br>
+        <input v-model="nameField2" placeholder="Имя игрока 2">
+        <button @click="inputName2">Ввести имя</button>
+    </div>
+    <br>
+    <span>O Игрок 1 : {{ name1 }}</span><br><br>
+    <span>X Игрок 2 : {{ name2 }}</span><br><br>
+    <div>
+        <input v-model="size" placeholder="Размерность поля" style="width: 20px"> х
+        <input v-model="size" placeholder="Размерность поля" style="width: 20px">
+        <br><br>
+        <button @click="inputFields">Начать игру</button><br><br>
+    </div>
+    <span>Ход: {{turn}}</span><br><br>
+    <table border="1px">
+        <tr v-for="(field, index1) in fields">
+            <td v-for="(field,index2) in fields" v-on:click="crossField(index1,index2)" class="cell">
+                {{fields[index1][index2]}}
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

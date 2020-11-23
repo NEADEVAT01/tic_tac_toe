@@ -1,0 +1,9 @@
+td {
+    width:50px;
+    height:50px;
+}
+.cell {
+    text-align: center;
+    font-size: 2em;
+    font-family: "BankGothic Lt BT";
+}
